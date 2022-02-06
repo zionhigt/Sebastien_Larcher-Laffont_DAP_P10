@@ -1,4 +1,5 @@
 env
+courses
 *.pyc
 __pycache__
 P10/documentation/
