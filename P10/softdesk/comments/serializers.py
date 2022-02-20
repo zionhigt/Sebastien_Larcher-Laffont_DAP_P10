@@ -10,7 +10,7 @@ class CommentListSerializer(ModelSerializer):
 
 
 class CommentDetailSerializer(ModelSerializer):
-    
+
     class Meta:
         model = Comment
         fields = [
@@ -21,3 +21,4 @@ class CommentDetailSerializer(ModelSerializer):
             'date_updated',
             'author_user_id'
             ]
+        read_only_fields = ['issue_id', 'author_user_id', 'date_created', 'date_updated', 'id']

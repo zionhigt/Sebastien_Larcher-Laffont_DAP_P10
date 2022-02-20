@@ -21,4 +21,3 @@ class AbstractViewSet(ModelViewSet):
             return self.detail_serializer_class
 
         return super().get_serializer_class()
-

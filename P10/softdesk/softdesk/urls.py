@@ -20,7 +20,7 @@ router_comments = routers.NestedSimpleRouter(router_issues, r'issues', lookup='i
 router_comments.register(r'comments', CommentViewSet, basename='comments')
 
 router_contributors = routers.NestedSimpleRouter(router, r'projects', lookup='project_id')
-router_contributors.register(r'contributors', ContributorsViewSet, basename='contributors')
+router_contributors.register(r'users', ContributorsViewSet, basename='users')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

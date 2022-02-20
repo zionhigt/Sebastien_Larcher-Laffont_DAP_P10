@@ -1,4 +1,5 @@
 from rest_framework.serializers import ModelSerializer
+from rest_framework.validators import UniqueTogetherValidator
 from contributors.models import Contributors
 
 
@@ -9,13 +10,12 @@ class ContributorsListSerializer(ModelSerializer):
         fields = [
             'id',
             'user_id',
-            'permission',
-            'role'
+            'project_id',
             ]
 
 
 class ContributorsDetailSerializer(ModelSerializer):
-    
+
     class Meta:
         model = Contributors
         fields = [
@@ -25,3 +25,10 @@ class ContributorsDetailSerializer(ModelSerializer):
             'permission',
             'role'
             ]
+
+        validators = [
+            UniqueTogetherValidator(
+                queryset=Contributors.objects.all(),
+                fields=['user_id', 'project_id']
+            )
+        ]

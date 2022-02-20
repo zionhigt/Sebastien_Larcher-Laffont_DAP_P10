@@ -7,13 +7,10 @@ class Contributors(models.Model):
         USER = ('R', "READ")
         owner = ('RW', "READ&WRITE")
 
-    
     class RoleTextChoices(models.TextChoices):
         DEV = ('D', "DÉVELOPPEUR")
         PROJECT_OWNER = ('PW', "PROJECT OWNER")
-    
 
-        
     user_id = models.ForeignKey('authentication.User', on_delete=models.CASCADE, related_name="user_contrib")
     project_id = models.ForeignKey('projects.Project', on_delete=models.CASCADE, related_name="project_contrib")
     permission = models.CharField(

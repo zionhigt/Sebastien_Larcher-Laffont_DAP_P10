@@ -1,7 +1,6 @@
 from django.db import models
 
 
-
 class Issue(models.Model):
 
     class PriorityTextChoices(models.TextChoices):
@@ -9,18 +8,15 @@ class Issue(models.Model):
         MOYENNE = ('MO', 'MOYENNE')
         ELEVEE = ('EL', 'ÉLEVÉE')
 
-
     class TagTextChoices(models.TextChoices):
         BUG = ('BG', 'BUG')
         AMELIORATION = ('AM', 'AMELIORATION')
         TACHE = ('TA', 'TACHE')
 
-
     class StatusTextChoices(models.TextChoices):
         A_FAIRE = ('AF', 'A FAIRE')
         EN_COURS = ('EC', 'EN COURS')
         TERMINE = ('TM', 'TERMINÉ')
-
 
     title = models.CharField(max_length=255)
     desc = models.CharField(max_length=512)
@@ -43,4 +39,6 @@ class Issue(models.Model):
         max_length=2
         )
     author_user_id = models.ForeignKey('authentication.User', on_delete=models.CASCADE, related_name='issue_author')
-    assignee_user_id = models.ForeignKey('authentication.User', on_delete=models.CASCADE, related_name="issue_assignee")
+    assignee_user_id = models.ForeignKey(
+        'authentication.User', on_delete=models.CASCADE, related_name="issue_assignee"
+        )

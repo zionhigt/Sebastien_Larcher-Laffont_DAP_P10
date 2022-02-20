@@ -10,7 +10,7 @@ class ProjectListSerializer(ModelSerializer):
 
 
 class ProjectDetailSerializer(ModelSerializer):
-    
+
     class Meta:
         model = Project
         fields = [
@@ -21,5 +21,11 @@ class ProjectDetailSerializer(ModelSerializer):
             'project_contrib',
             'date_created',
             'date_updated',
-            'author_user_id',
+            'author_user_id'
+            ]
+        read_only_fields = [
+            'id',
+            'date_created',
+            'date_updated',
+            'author_user_id'
             ]

@@ -1,7 +1,6 @@
 from django.db import models
 
 
-
 class Comment(models.Model):
 
     desc = models.CharField(max_length=512)
