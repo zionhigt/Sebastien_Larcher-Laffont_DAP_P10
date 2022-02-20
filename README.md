@@ -1,7 +1,7 @@
 
 # Softdesk
 
-Application de critiques littéraire. 
+Application de ticketing. 
 
 
 ## Prérequis
