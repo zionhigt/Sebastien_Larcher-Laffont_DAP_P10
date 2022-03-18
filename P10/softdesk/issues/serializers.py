@@ -13,7 +13,7 @@ class IssueUpdateSerializer(ModelSerializer):
 
     class Meta:
         model = Issue
-        fields = ['id', 'title', 'priority', 'status', 'assignee_user_id']
+        fields = ['id', 'title', 'priority', 'status', 'desc', 'assignee_user_id']
 
 
 class IssueDetailSerializer(ModelSerializer):

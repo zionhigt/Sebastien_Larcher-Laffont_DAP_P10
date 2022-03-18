@@ -30,5 +30,5 @@ urlpatterns = [
     path('api/', include(router_issues.urls)),
     path('api/', include(router_comments.urls)),
     path('api/', include(router.urls)),
-    path('api/', include(router_contributors.urls)),
+    path('api/', include(router_contributors.urls))
 ]

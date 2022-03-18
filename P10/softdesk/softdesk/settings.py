@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-pel+oh*=sbf7-5c5#77np5ljhgjo4$^zhn#ptir7z_m1o=ag-a'
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(seconds=2)
+    'ACCESS_TOKEN_LIFETIME': timedelta(seconds=900)
 }
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

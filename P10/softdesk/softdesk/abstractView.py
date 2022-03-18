@@ -17,7 +17,7 @@ class AbstractViewSet(ModelViewSet):
         return records
 
     def get_serializer_class(self):
-        if self.action in ['retrieve', 'create']:
+        if self.action in ['update', 'retrieve', 'create']:
             return self.detail_serializer_class
 
         return super().get_serializer_class()
